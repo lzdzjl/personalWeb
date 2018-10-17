@@ -1,0 +1,79 @@
+/*======reset css======*/
+
+*,
+*::before,
+*::after {
+    /*所有的标签和伪元素都选中*/
+    padding: 0;
+    margin: 0;
+
+    /*盒子宽度从边框开始计算*/
+    /*因为移动端不像PC端那样固定的计算数值，都是百分比布局
+    这里使用这个方法，让盒子的边框类似设置成为内边框的样子*/
+    /*防止内容溢出，不出现滚动条*/
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+
+    /*点击高亮效果的清除*/
+    tap-highlight-color:transparent;
+    -webkit-tap-highlight-color:transparent;
+}
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;
+    color:#333;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+input{
+    border: none;
+    outline: none;
+    /*不允许改变尺寸*/
+    resize: none;
+    /*元素的外观，none为去除所有样式,完全空白 方便自定义*/
+    -webkit-appearance: none;
+}
+
+/*======common css======*/
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}
+.clearFix::before,
+.clearFix::after{
+    content: "";
+    /*设置站位，但是看不到，用来清除浮动*/
+    display: block;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+
+    clear: both;
+}
+.m_l10{
+    margin-left: 10px;
+}
+.m_r10{
+    margin-right: 10px;
+}
+.m_t10{
+    margin-top: 10px;
+}
+.m_b10{
+    margin-bottom: 10px;
+}
+/*使用精灵图的公共样式*/
+[class^='icon_'],[class*=' icon_']{
+    background-repeat: no-repeat;
+    background-image: url("../images/sprites.png");
+    /*可以防止图片失真的问题 宽高设置为原图的一半即可避免失真问题*/
+    background-size: 200px 200px;
+    /*只要设置background_position即可使用图片*/
+}

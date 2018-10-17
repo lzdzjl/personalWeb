@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.baseCenter {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@font-face {
+    font-family: 'Shepi';
+    src:url("../../assets/css/font/001.ttf");
+}
